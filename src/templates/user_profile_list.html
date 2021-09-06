@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% endblock title %}
+
+{% block body %}
+<div class="row">
+    <h3>User Profile list</h3>
+    <table class="table table-border">
+        <thead>
+            <tr>
+                <th>Username</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+            </tr>
+            {% endfor %} 
+            <tr>
+                <td colspan="2"><a href="{% url 'sign_up' %}" class="btn btn-primary">Create Account</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock body %}

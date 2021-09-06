@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% endblock title %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-8">
+        <table class="table table-border">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <td>{{ user.username }}</td>
+                <td>{{ user.user_profile.date_of_birth }}</td>
+
+                <td>{{user.user_profile.gender}}</td>
+                <td>{{ user.user_profile.phone}}</td>
+                <td>{{ user.user_profile.address }}</td>
+
+
+                <td>
+                    <a href="{% url 'edit_profile' %}" type="button" class="btn btn-primary pull-right ">Edit</a>
+                </td>
+
+                <td>
+                    <a href="{% url 'delete_profile' username=user.username %}"  type="button" class="btn btn-primary pull-right ">Deelte</a>
+                </td>
+
+            </tbody>
+        </table>
+
+    </div 
+
+    {% endblock body %}
